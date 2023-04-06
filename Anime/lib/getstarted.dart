@@ -31,7 +31,7 @@ class GetStarted extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.only(bottom: 6.0),
                 child: Text(
-                  "Welcome to Otaku",
+                  "Welcome to otaku",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 35,
