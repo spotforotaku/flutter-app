@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'flutter',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
@@ -55,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
             width: screenWidth * 0.85,
             margin: const EdgeInsets.only(top: 90),
             child: Image.asset('assets/images/OTAKU 2.png'),
+            
           ),
         ),
         Center(
