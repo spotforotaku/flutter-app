@@ -13,19 +13,16 @@ class HomePage extends StatelessWidget {
     return StreamBuilder(
       stream: AuthService.userStream,
       builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return ErrorScreen();
-        }
-
+        print(snapshot.connectionState);
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Loading();
+          return const Loading();
+        } else if (snapshot.hasError) {
+          return ErrorScreen();
+        } else if (snapshot.hasData) {
+          return const DashboardPage();
+        } else {
+          return const LandingPage();
         }
-
-        if (snapshot.hasData) {
-          return DashboardPage();
-        }
-
-        return LandingPage();
       },
     );
   }

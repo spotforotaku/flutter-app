@@ -8,6 +8,7 @@ class AuthService {
   static Future<void> loginAnon() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
+      print("login success!");
     } on FirebaseAuthException catch (_) {
       print("Error while logging in anon");
     }
