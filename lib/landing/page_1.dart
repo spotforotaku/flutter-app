@@ -19,12 +19,12 @@ class Page1 extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(top: 200),
-                  height: MediaQuery.of(context).size.height * .45,
+                  margin: const EdgeInsets.only(top: 20),
+                  height: MediaQuery.of(context).size.height * .36,
                   alignment: Alignment.topCenter,
                 ),
                 const Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Text(
                     "Welcome to Otaku",
                     style: TextStyle(
@@ -34,20 +34,7 @@ class Page1 extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.height * .50,
-                    child: const Text(
-                      textAlign: TextAlign.center,
-                      "Find your Ideal Anime",
-                      style: TextStyle(
-                        color: Colors.white, fontSize: 17,
-                        // fontFamily: regular
-                      ),
-                    ),
-                  ),
-                ),
+                const Spacer(),
                 Container(
                   margin: const EdgeInsets.only(top: 60),
                   child: SizedBox(
@@ -66,7 +53,9 @@ class Page1 extends StatelessWidget {
                       },
                       child: const Text(
                         'Get Started',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),

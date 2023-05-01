@@ -106,42 +106,47 @@ class _Page2State extends State<Page2> {
                 ),
                 const Spacer(),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 64),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: 278,
-                        height: 55,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xfff05d5e),
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(39.32), // <-- Radius
-                            ),
-                          ),
-                          onPressed: () {
-                            // Navigator.push(context, MaterialPageRoute(builder: (_) => Let_in()));
-                          },
-                          child: const Text(
-                            'Start tutorial',
-                            style: TextStyle(fontSize: 18),
-                          ),
+                  margin: const EdgeInsets.only(top: 60),
+                  child: SizedBox(
+                    width: 278,
+                    height: 55,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xfff05d5e),
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(39.32), // <-- Radius
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      onPressed: () {
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) => Let_in()));
+                      },
+                      child: const Text(
+                        'Start Tutorial',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Have already used our app before?",
+                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       TextButton(
                         onPressed: () {
-                          // Add your code here
+                          // Navigate to sign up screen
                         },
                         child: const Text(
-                          'Skip',
-                          style: TextStyle(
-                            color: Color(0xfff05d5e),
-                            fontSize: 15,
-                          ),
+                          "Skip",
+                          style:
+                              TextStyle(color: Color(0xfff05d5e), fontSize: 15),
                         ),
                       ),
                     ],
