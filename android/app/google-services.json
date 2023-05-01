@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "774891492301-765m7fb61lusnnagr19g1127q5f4vt1k.apps.googleusercontent.com",
+          "client_id": "774891492301-v5487rpon98n4hb6eu98rh5lbffgq216.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spotforotaku.otaku",
+            "certificate_hash": "43e8e1e0d603c2ac5d2a13561bf6d27ce3a33bec"
+          }
+        },
+        {
+          "client_id": "774891492301-ngut786l0hhoit5d0i1krpt7c8ivoiq8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
