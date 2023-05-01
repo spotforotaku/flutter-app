@@ -19,13 +19,17 @@ class MyApp extends StatelessWidget {
         final theme = Provider.of<ThemeProvider>(context);
 
         return MaterialApp(
+          theme: theme.themeData,
           home: Scaffold(
             appBar: AppBar(
               title: const Text(
                 "Otaku",
               ),
               actions: [
-                IconButton(onPressed: theme.toggle, icon: theme.icon),
+                IconButton(
+                  onPressed: theme.toggle,
+                  icon: theme.icon,
+                ),
               ],
             ),
             body: Center(

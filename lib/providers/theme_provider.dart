@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/theme.dart';
 
 class ThemeProvider with ChangeNotifier {
   bool _isDark = false;
@@ -15,5 +16,12 @@ class ThemeProvider with ChangeNotifier {
       return const Icon(Icons.nights_stay);
     }
     return const Icon(Icons.wb_sunny);
+  }
+
+  get themeData {
+    if (_isDark) {
+      return darkTheme;
+    }
+    return lightTheme;
   }
 }
