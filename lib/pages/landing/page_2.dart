@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:otaku/landing/page.dart' as landing_page;
+import 'package:otaku/pages/landing/page.dart' as landing_page;
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});

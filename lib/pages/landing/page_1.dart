@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:otaku/landing/page.dart' as landing_page;
+import 'package:otaku/pages/landing/page.dart' as landing_page;
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);

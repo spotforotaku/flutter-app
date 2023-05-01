@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/landing/page_1.dart';
-import 'package:otaku/landing/page_2.dart';
+import 'package:otaku/pages/landing/page_1.dart';
+import 'package:otaku/pages/landing/page_2.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+export 'page.dart';
+export 'page_1.dart';
+export 'page_2.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

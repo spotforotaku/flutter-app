@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:otaku/firebase_options.dart';
-import 'package:otaku/landing/landing.dart';
 import 'package:otaku/providers/theme_provider.dart';
 import 'package:otaku/shared/error.dart';
 import 'package:otaku/shared/loading.dart';
