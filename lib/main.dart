@@ -1,15 +1,28 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:otaku/firebase_options.dart';
 import 'package:otaku/landing/landing.dart';
 import 'package:otaku/providers/theme_provider.dart';
+import 'package:otaku/shared/error.dart';
 import 'package:otaku/shared/loading.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final Future<FirebaseApp> _initalization = Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -21,29 +34,27 @@ class MyApp extends StatelessWidget {
         final theme = Provider.of<ThemeProvider>(context);
 
         return MaterialApp(
-          theme: theme.themeData,
-          home: Scaffold(
-            appBar: AppBar(
-              title: const Text(
-                "Otaku",
-              ),
-              actions: [
-                IconButton(
-                  onPressed: theme.toggle,
-                  icon: theme.icon,
-                ),
-              ],
-            ),
-            body: Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  print("OnPressed");
-                },
-                child: const Text(
-                  "Hello World!",
-                ),
-              ),
-            ),
+          title: "Otaku",
+          home: FutureBuilder(
+            future: _initalization,
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return ErrorScreen();
+              }
+
+              if (snapshot.connectionState == ConnectionState.done) {
+                return MaterialApp(
+                  theme: theme.themeData,
+                  home: Scaffold(
+                    body: Center(
+                      child: Text("Scaffold body"),
+                    ),
+                  ),
+                );
+              }
+
+              return Loading();
+            },
           ),
         );
       },
