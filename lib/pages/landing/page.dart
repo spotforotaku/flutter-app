@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/constants.dart';
 
 class Page extends StatelessWidget {
   final IconData landingIcon;
@@ -69,7 +70,7 @@ class Page extends StatelessWidget {
                     height: 55,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xfff05d5e),
+                        backgroundColor: primaryColor,
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(39.32), // <-- Radius
@@ -102,7 +103,7 @@ class Page extends StatelessWidget {
                         child: Text(
                           labelButtonText,
                           style: const TextStyle(
-                              color: Color(0xfff05d5e), fontSize: 15),
+                              color: primaryColor, fontSize: 15),
                         ),
                       ),
                     ],
