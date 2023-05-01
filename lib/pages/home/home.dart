@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/pages/dashboard/dashboard.dart';
 import 'package:otaku/pages/landing/landing.dart';
+import 'package:otaku/routes.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/error.dart';
 import 'package:otaku/shared/loading.dart';
@@ -14,14 +15,29 @@ class HomePage extends StatelessWidget {
       stream: AuthService.userStream,
       builder: (context, snapshot) {
         print(snapshot.connectionState);
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Loading();
-        } else if (snapshot.hasError) {
+        if (snapshot.hasError) {
           return ErrorScreen();
-        } else if (snapshot.hasData) {
-          return const DashboardPage();
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          Navigator.popUntil(
+            context,
+            ModalRoute.withName(
+              AppRoutes.homeRoute,
+            ),
+          );
+          return const Loading();
         } else {
-          return const LandingPage();
+          if (snapshot.hasData) {
+            Navigator.popUntil(
+              context,
+              ModalRoute.withName(
+                AppRoutes.homeRoute,
+              ),
+            );
+            return const DashboardPage();
+          } else {
+            return const LandingPage();
+          }
         }
       },
     );

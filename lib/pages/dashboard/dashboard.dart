@@ -11,10 +11,7 @@ class DashboardPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            var navigator = Navigator.of(context);
             await AuthService.signOut();
-            navigator.pushNamedAndRemoveUntil(
-                AppRoutes.landingRoute, (route) => false);
           },
           child: Text(
             "Sign Out",
