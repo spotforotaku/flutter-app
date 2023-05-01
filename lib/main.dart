@@ -20,10 +20,6 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         final theme = Provider.of<ThemeProvider>(context);
 
-        return const MaterialApp(
-          home: LandingPage(),
-        );
-
         return MaterialApp(
           theme: theme.themeData,
           home: Scaffold(
