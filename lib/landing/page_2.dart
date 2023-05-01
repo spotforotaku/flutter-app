@@ -35,21 +35,29 @@ class _Page2State extends State<Page2> {
 
   void _updateTextAndIcon() async {
     await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _index = 1;
-    });
+    if (mounted) {
+      setState(() {
+        _index = 1;
+      });
+    }
     await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _index = 2;
-    });
+    if (mounted) {
+      setState(() {
+        _index = 2;
+      });
+    }
     await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _index = 3;
-    });
+    if (mounted) {
+      setState(() {
+        _index = 3;
+      });
+    }
     await Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      _index = 0;
-    });
+    if (mounted) {
+      setState(() {
+        _index = 0;
+      });
+    }
     _updateTextAndIcon();
   }
 
