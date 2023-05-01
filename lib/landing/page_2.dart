@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:otaku/landing/page.dart' as landing_page;
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -63,100 +63,14 @@ class _Page2State extends State<Page2> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.black,
-        image: DecorationImage(
-          image: AssetImage("assets/images/getStarted.png"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 20),
-                  height: MediaQuery.of(context).size.height * .36,
-                  alignment: Alignment.topCenter,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    children: [
-                      Icon(
-                        _icons[_index],
-                        color: Colors.white,
-                        size: 45.0,
-                      ),
-                      const SizedBox(height: 30.0),
-                      Text(
-                        _texts[_index],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 35.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const Spacer(),
-                Container(
-                  margin: const EdgeInsets.only(top: 60),
-                  child: SizedBox(
-                    width: 278,
-                    height: 55,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xfff05d5e),
-                        shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(39.32), // <-- Radius
-                        ),
-                      ),
-                      onPressed: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (_) => Let_in()));
-                      },
-                      child: const Text(
-                        'Start Tutorial',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Have already used our app before?",
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          // Navigate to sign up screen
-                        },
-                        child: const Text(
-                          "Skip",
-                          style:
-                              TextStyle(color: Color(0xfff05d5e), fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+    return landing_page.Page(
+      landingIcon: _icons[_index],
+      landingText: _texts[_index],
+      buttonText: "Start Tutorial",
+      labelButtonText: "Skip",
+      labelButtonDesc: "Have already used our app before?",
+      handleButton: () {},
+      handleLabel: () {},
     );
   }
 }
