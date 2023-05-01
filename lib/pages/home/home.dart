@@ -19,20 +19,24 @@ class HomePage extends StatelessWidget {
           return ErrorScreen();
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          Navigator.popUntil(
-            context,
-            ModalRoute.withName(
-              AppRoutes.homeRoute,
-            ),
+          Future.delayed(
+            Duration.zero,
+            () {
+              if (Navigator.of(context).canPop()) {
+                Navigator.of(context).pop();
+              }
+            },
           );
           return const Loading();
         } else {
           if (snapshot.hasData) {
-            Navigator.popUntil(
-              context,
-              ModalRoute.withName(
-                AppRoutes.homeRoute,
-              ),
+            Future.delayed(
+              Duration.zero,
+              () {
+                if (Navigator.of(context).canPop()) {
+                  Navigator.of(context).pop();
+                }
+              },
             );
             return const DashboardPage();
           } else {
