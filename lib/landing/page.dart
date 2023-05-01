@@ -75,12 +75,10 @@ class Page extends StatelessWidget {
                               BorderRadius.circular(39.32), // <-- Radius
                         ),
                       ),
-                      onPressed: () {
-                        // Navigator.push(context, MaterialPageRoute(builder: (_) => Let_in()));
-                      },
-                      child: const Text(
-                        'Get Started',
-                        style: TextStyle(
+                      onPressed: () => handleButton(),
+                      child: Text(
+                        buttonText,
+                        style: const TextStyle(
                           fontSize: 18,
                         ),
                       ),
@@ -92,18 +90,19 @@ class Page extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        "Already have an account? ",
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      Text(
+                        labelButtonDesc,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                        ),
                       ),
                       TextButton(
-                        onPressed: () {
-                          // Navigate to sign up screen
-                        },
-                        child: const Text(
-                          "Sign in",
-                          style:
-                              TextStyle(color: Color(0xfff05d5e), fontSize: 15),
+                        onPressed: () => handleLabel(),
+                        child: Text(
+                          labelButtonText,
+                          style: const TextStyle(
+                              color: Color(0xfff05d5e), fontSize: 15),
                         ),
                       ),
                     ],
