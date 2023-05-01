@@ -97,7 +97,7 @@ class _Page2State extends State<Page2> {
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 25.0,
+                          fontSize: 35.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

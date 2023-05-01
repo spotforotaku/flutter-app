@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
@@ -23,15 +24,26 @@ class Page1 extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * .36,
                   alignment: Alignment.topCenter,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text(
-                    "Welcome to Otaku",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: const [
+                      Icon(
+                        FontAwesomeIcons.heart,
+                        color: Colors.white,
+                        size: 45.0,
+                      ),
+                      SizedBox(height: 30.0),
+                      Text(
+                        "Welcome to Otaku!",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 35.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const Spacer(),
@@ -42,7 +54,7 @@ class Page1 extends StatelessWidget {
                     height: 55,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xfff05d5e),
+                        backgroundColor: const Color(0xfff05d5e),
                         shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.circular(39.32), // <-- Radius
