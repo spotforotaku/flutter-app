@@ -6,6 +6,9 @@ ThemeData lightTheme = ThemeData(
 );
 
 ThemeData darkTheme = ThemeData(
-  primarySwatch: Colors.deepOrange,
+  primarySwatch: Colors.red,
   brightness: Brightness.dark,
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Colors.red,
+  ),
 );
