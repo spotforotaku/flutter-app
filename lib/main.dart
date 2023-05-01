@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/providers/theme_provider.dart';
+import 'package:otaku/shared/loading.dart';
 import 'package:provider/provider.dart';
 
 void main() {
