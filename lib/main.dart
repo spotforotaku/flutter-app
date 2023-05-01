@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:otaku/firebase_options.dart';
 import 'package:otaku/providers/theme_provider.dart';
+import 'package:otaku/routes.dart';
 import 'package:otaku/shared/error.dart';
 import 'package:otaku/shared/loading.dart';
 import 'package:provider/provider.dart';
@@ -44,11 +45,8 @@ class _MyAppState extends State<MyApp> {
               if (snapshot.connectionState == ConnectionState.done) {
                 return MaterialApp(
                   theme: theme.themeData,
-                  home: Scaffold(
-                    body: Center(
-                      child: Text("Scaffold body"),
-                    ),
-                  ),
+                  routes: AppRoutes.routes,
+                  initialRoute: AppRoutes.homeRoute,
                 );
               }
 
