@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:otaku/pages/landing/page.dart' as landing_page;
+import 'package:otaku/routes.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -70,7 +71,9 @@ class _Page2State extends State<Page2> {
       labelButtonText: "Skip",
       labelButtonDesc: "Have already used our app before?",
       handleButton: () {},
-      handleLabel: () {},
+      handleLabel: () {
+        Navigator.of(context).pushNamed(AppRoutes.loginRoute);
+      },
     );
   }
 }
