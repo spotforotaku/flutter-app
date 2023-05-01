@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774891492301",
+    "project_id": "otaku-f344d",
+    "storage_bucket": "otaku-f344d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774891492301:android:79cfb790aac7513f0b6a84",
+        "android_client_info": {
+          "package_name": "com.spotforotaku.otaku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774891492301-765m7fb61lusnnagr19g1127q5f4vt1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJOPbt3Uyk0qfRrIDAHU9I8NAkSXF7PTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774891492301-765m7fb61lusnnagr19g1127q5f4vt1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
