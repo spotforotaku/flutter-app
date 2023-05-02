@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class AnimeApi {
@@ -7,16 +9,16 @@ class AnimeApi {
     return await http.get(uri);
   }
 
-  static getPopular({int page = 1}) async {
+  static getTopAiring({int page = 1}) async {
     var uri = Uri.https(
       _backendUri,
-      "popular",
+      "top-airing",
       {
         "page": "$page",
       },
     );
     var resp = await _getRequest(uri);
     print("response");
-    print(resp.body);
+    var json = jsonDecode(resp.body);
   }
 }

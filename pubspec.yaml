@@ -43,6 +43,7 @@ dependencies:
     google_sign_in: ^6.1.0
     velocity_x: ^3.6.0
     http: ^0.13.6
+    json_annotation: ^4.8.0
 
 dev_dependencies:
     flutter_test:
@@ -54,6 +55,8 @@ dev_dependencies:
     # package. See that file for information about deactivating specific lint
     # rules and activating additional ones.
     flutter_lints: ^2.0.0
+    json_serializable: ^6.6.1
+    build_runner: ^2.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
