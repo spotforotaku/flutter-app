@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/models/top_airing.dart';
-import 'package:otaku/pages/dashboard/screens/anime_details.dart';
+import 'package:otaku/pages/dashboard/screens/anime_details/anime_details_screen.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AnimeSlider extends StatelessWidget {

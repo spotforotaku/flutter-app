@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/models/popular_anime.dart';
 import 'package:otaku/models/recently_released.dart';
-import 'package:otaku/pages/dashboard/screens/anime_details.dart';
+import 'package:otaku/pages/dashboard/screens/anime_details/anime_details_screen.dart';
 
 class AnimeGrid<T> extends StatelessWidget {
   final String title;
