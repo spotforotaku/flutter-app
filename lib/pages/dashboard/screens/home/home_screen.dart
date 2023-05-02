@@ -93,75 +93,19 @@ class _HomeScreenState extends State<HomeScreen> {
             getSizedBox(
               height: 10,
             ),
-            FutureBuilder(
-              future: AnimeApi.getRecentlyReleased(),
-              builder: ((context, snapshot) {
-                if (snapshot.hasError) {
-                  return Text("Error");
-                }
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Text("Loading");
-                } else {
-                  if (snapshot.hasData) {
-                    var data = snapshot.data!;
-
-                    List<String> images = List<String>.from(
-                      data.map(
-                        (e) => e.animeImg,
-                      ),
-                    );
-
-                    // return Text("Has Data");
-                    return AnimeGrid(
-                      title: "Recently Released Episodes",
-                      images: images,
-                    );
-                  }
-                  return AnimeGrid(
-                    title: "Recently Released Episodes",
-                    images: animeList,
-                  );
-                }
-              }),
+            AnimeGrid(
+              futureValue: AnimeApi.getRecentlyReleased(),
+              title: "Recently Released Episodes",
+              defaultList: animeList,
             ),
             getSizedBox(
               height: 10,
             ),
-            FutureBuilder(
-              future: AnimeApi.getPopular(),
-              builder: (context, snapshot) {
-                if (snapshot.hasError) {
-                  return Text("has error");
-                }
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Text("loading...");
-                } else {
-                  if (snapshot.hasData) {
-                    var data = snapshot.data!;
-
-                    List<String> images = List<String>.from(
-                      data.map(
-                        (e) => e.animeImg,
-                      ),
-                    );
-
-                    return AnimeGrid(
-                      title: "Now Trending",
-                      images: images,
-                    );
-                  } else {
-                    return AnimeGrid(
-                      title: "Now Trending",
-                      images: trendingList,
-                    );
-                  }
-                }
-              },
+            AnimeGrid(
+              futureValue: AnimeApi.getPopular(),
+              title: "Now Trending",
+              defaultList: trendingList,
             ),
-            // AnimeGrid(
-            //   title: "Now Trending",
-            //   images: trendingList,
-            // ),
             getSizedBox(
               height: 10,
             ),

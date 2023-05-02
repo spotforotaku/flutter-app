@@ -1,14 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/models/popular_anime.dart';
+import 'package:otaku/models/recently_released.dart';
 
-class AnimeGrid extends StatelessWidget {
+class AnimeGrid<T> extends StatelessWidget {
   final String title;
-  final List<String> images;
+  final Future<List<T>> futureValue;
+  final List<String> defaultList;
 
   const AnimeGrid({
     super.key,
     required this.title,
+    required this.futureValue,
+    required this.defaultList,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<dynamic>>(
+      future: futureValue,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text("has error");
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Text("Loading");
+        } else {
+          if (snapshot.hasData) {
+            var data = snapshot.data!;
+
+            List<String> images = List<String>.from(
+              data.map(
+                (e) => e.animeImg,
+              ),
+            );
+
+            return AnimeGridHelper(
+              title: title,
+              images: images,
+            );
+          } else {
+            return AnimeGridHelper(
+              title: title,
+              images: defaultList,
+            );
+          }
+        }
+      },
+    );
+  }
+}
+
+class AnimeGridHelper extends StatelessWidget {
+  const AnimeGridHelper({
+    super.key,
+    required this.title,
     required this.images,
   });
+
+  final String title;
+  final List<String> images;
 
   @override
   Widget build(BuildContext context) {
