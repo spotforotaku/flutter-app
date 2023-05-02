@@ -10,7 +10,7 @@ class AnimeApi {
     return await http.get(uri);
   }
 
-  static getTopAiring({int page = 1}) async {
+  static Future<List<TopAiring>> getTopAiring({int page = 1}) async {
     var uri = Uri.https(
       _backendUri,
       "top-airing",
@@ -21,11 +21,11 @@ class AnimeApi {
     var resp = await _getRequest(uri);
     print("response");
     Iterable l = jsonDecode(resp.body);
-    List<TopAiring> topAnimes = List<TopAiring>.from(
+    List<TopAiring> topAiring = List<TopAiring>.from(
       l.map(
         (e) => TopAiring.fromJson(e),
       ),
     );
-    print(topAnimes[0].toJson());
+    return topAiring;
   }
 }
