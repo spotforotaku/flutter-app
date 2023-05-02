@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/constants/constants.dart';
 import 'package:otaku/pages/landing/landing.dart';
 import 'package:otaku/services/auth.dart';
-
-import 'constants.dart';
 
 class ProfileTop extends StatelessWidget {
   const ProfileTop({super.key});

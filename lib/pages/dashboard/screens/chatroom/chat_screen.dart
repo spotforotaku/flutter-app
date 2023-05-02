@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/constants.dart';
-
+import 'package:otaku/constants/constants.dart';
 import 'chat_card.dart';
 import 'chat_card1.dart';
 import 'chat_clubs.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:otaku/constants.dart';
+import 'package:otaku/constants/constants.dart';
 import 'package:otaku/services/auth.dart';
 
 class LoginPage extends StatelessWidget {

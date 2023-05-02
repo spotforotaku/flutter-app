@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/constants.dart';
+import 'package:otaku/constants/constants.dart';
 
 Widget chatTop() {
   return Column(

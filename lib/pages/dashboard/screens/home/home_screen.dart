@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants.dart';
+import 'package:otaku/constants/constants.dart';
 import 'package:otaku/pages/dashboard/screens/home/anime_grid.dart';
-import 'package:otaku/pages/dashboard/screens/home/constants.dart';
 import 'package:otaku/pages/dashboard/screens/home/genres.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
 import 'package:otaku/providers/dashboard_provider.dart';

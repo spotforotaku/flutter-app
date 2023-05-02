@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/constants.dart';
+import 'package:otaku/constants/constants.dart';
 
 class GroupChatRoom extends StatefulWidget {
   const GroupChatRoom({Key? key}) : super(key: key);
