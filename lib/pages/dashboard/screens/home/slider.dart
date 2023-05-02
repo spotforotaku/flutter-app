@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/models/top_airing.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AnimeSlider extends StatelessWidget {
-  final List<String> animes;
+  final List<TopAiring> animes;
   const AnimeSlider({
     super.key,
     required this.animes,
@@ -29,7 +30,7 @@ class AnimeSlider extends StatelessWidget {
                 children: [
                   Image(
                     image: NetworkImage(
-                      animes[index],
+                      animes[index].animeImg,
                     ),
                     height: 300,
                     fit: BoxFit.contain,

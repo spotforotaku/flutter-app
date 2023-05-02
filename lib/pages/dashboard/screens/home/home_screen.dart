@@ -71,16 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (snapshot.hasData) {
                     var data = snapshot.data!;
 
-                    List<String> animes = List<String>.from(
-                      data.map(
-                        (e) {
-                          return e.animeImg;
-                        },
-                      ),
-                    );
-
                     return AnimeSlider(
-                      animes: animes,
+                      animes: data,
                     );
                   } else {
                     return Text(
