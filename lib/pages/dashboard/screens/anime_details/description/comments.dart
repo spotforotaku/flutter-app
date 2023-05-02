@@ -14,7 +14,7 @@ Widget Comments(context) {
         style: TextStyle(fontSize: 18, fontFamily: bold),
       ),
       Container(
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.3,
         child: ListView.separated(
             itemBuilder: (context, index) {
               return ListTile(

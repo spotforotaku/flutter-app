@@ -8,6 +8,13 @@ class DescriptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.pink,
+        ),
+        backgroundColor: Colors.transparent,
+      ),
+      extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         child: Column(
           children: [

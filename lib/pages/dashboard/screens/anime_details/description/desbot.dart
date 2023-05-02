@@ -147,7 +147,7 @@ Widget desbot(context) {
             ],
           ),
           SizedBox(
-            height: 14,
+            height: 10,
           ),
           Comments(context),
         ],
