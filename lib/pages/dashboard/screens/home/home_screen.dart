@@ -83,8 +83,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       animes: animes,
                     );
                   } else {
-                    return AnimeSlider(
-                      animes: animeSlider,
+                    return Text(
+                      "Something went wrong. We're sorry about that 😥",
                     );
                   }
                 }
