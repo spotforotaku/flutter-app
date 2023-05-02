@@ -34,6 +34,14 @@ class AnimeDetailsScreen extends StatelessWidget {
         }
 
         return Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            iconTheme: IconThemeData(
+              color: Colors.pink,
+            ),
+          ),
+          extendBodyBehindAppBar: true,
           body: Center(
             child: Text(
               animeTitle,
