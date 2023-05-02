@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:otaku/models/top_airing.dart';
 
 class AnimeApi {
   static const _backendUri = "gogoanime-api-production-3d9f.up.railway.app";
@@ -19,6 +20,12 @@ class AnimeApi {
     );
     var resp = await _getRequest(uri);
     print("response");
-    var json = jsonDecode(resp.body);
+    Iterable l = jsonDecode(resp.body);
+    List<TopAiring> topAnimes = List<TopAiring>.from(
+      l.map(
+        (e) => TopAiring.fromJson(e),
+      ),
+    );
+    print(topAnimes[0].toJson());
   }
 }
