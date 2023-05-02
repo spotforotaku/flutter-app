@@ -83,20 +83,46 @@ class _HomeScreenState extends State<HomeScreen> {
                       animes: animes,
                     );
                   } else {
-                    return Text("Not loaded!");
+                    return AnimeSlider(
+                      animes: animeSlider,
+                    );
                   }
                 }
               },
             ),
-            // AnimeSlider(
-            //   animes: animeSlider,
-            // ),
             getSizedBox(
               height: 10,
             ),
-            AnimeGrid(
-              title: "Newly Aired Animes",
-              images: animeList,
+            FutureBuilder(
+              future: AnimeApi.getRecentlyReleased(),
+              builder: ((context, snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Error");
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Text("Loading");
+                } else {
+                  if (snapshot.hasData) {
+                    var data = snapshot.data!;
+
+                    List<String> images = List<String>.from(
+                      data.map(
+                        (e) => e.animeImg,
+                      ),
+                    );
+
+                    // return Text("Has Data");
+                    return AnimeGrid(
+                      title: "Recently Released Episodes",
+                      images: images,
+                    );
+                  }
+                  return AnimeGrid(
+                    title: "Recently Released Episodes",
+                    images: animeList,
+                  );
+                }
+              }),
             ),
             getSizedBox(
               height: 10,

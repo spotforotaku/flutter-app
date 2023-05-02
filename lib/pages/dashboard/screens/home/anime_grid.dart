@@ -49,9 +49,12 @@ class AnimeGrid extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Stack(
                       children: [
-                        Image.asset(
-                          images[index],
-                          fit: BoxFit.fitHeight,
+                        Image(
+                          image: NetworkImage(
+                            images[index],
+                          ),
+                          height: 300,
+                          fit: BoxFit.contain,
                         ),
                         Positioned(
                           right: 0,
