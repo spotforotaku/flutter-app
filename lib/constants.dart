@@ -75,3 +75,4 @@ const one = "assets/images/one.png";
 // profile
 const profilebg = "assets/images/setting_bg.png";
 const propic = "assets/images/person.png";
+const chatnav = "assets/images/chatnav.png";

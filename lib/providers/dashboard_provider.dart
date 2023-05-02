@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:otaku/pages/dashboard/screens/chatroom/chat_screen.dart';
 import 'package:otaku/pages/dashboard/screens/screens.dart';
 
 class DashboardProvider with ChangeNotifier {
@@ -7,42 +8,47 @@ class DashboardProvider with ChangeNotifier {
 
   final _navItems = [
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.home,
-          size: 26,
-        ),
-        label: "Home"),
+      icon: Icon(
+        Icons.home,
+        size: 26,
+      ),
+      label: "Home",
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.list_alt,
-          size: 26,
-        ),
-        label: "My List"),
+      icon: Icon(
+        Icons.list_alt,
+        size: 26,
+      ),
+      label: "My List",
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.grid_view_rounded,
-          size: 26,
-        ),
-        label: "Recommend"),
+      icon: Icon(
+        Icons.grid_view_rounded,
+        size: 26,
+      ),
+      label: "Recommend",
+    ),
     const BottomNavigationBarItem(
-        icon: FaIcon(
-          FontAwesomeIcons.comments,
-          size: 26,
-        ),
-        label: "Discussion"),
+      icon: FaIcon(
+        FontAwesomeIcons.comments,
+        size: 26,
+      ),
+      label: "Discussion",
+    ),
     const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.person,
-          size: 26,
-        ),
-        label: "Profile"),
+      icon: Icon(
+        Icons.person,
+        size: 26,
+      ),
+      label: "Profile",
+    ),
   ];
 
   final _pages = [
     HomeScreen(),
     ListScreen(),
     RecommendScreen(),
-    DiscussionScreen(),
+    ChatScreen(),
     ProfileScreen(),
   ];
 
@@ -50,7 +56,7 @@ class DashboardProvider with ChangeNotifier {
     false,
     true,
     false,
-    true,
+    false,
     false,
   ];
 

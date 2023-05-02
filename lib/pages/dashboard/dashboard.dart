@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/providers/dashboard_provider.dart';
-import 'package:otaku/routes.dart';
-import 'package:otaku/services/auth.dart';
 import 'package:provider/provider.dart';
 
 class DashboardPage extends StatelessWidget {
