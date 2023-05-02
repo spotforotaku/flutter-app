@@ -13,9 +13,9 @@ class AnimeSlider extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return VxSwiper.builder(
-          viewportFraction: 0.90,
+          viewportFraction: 0.55,
           autoPlay: true,
-          height: 275,
+          height: 300,
           enlargeCenterPage: true,
           itemCount: animes.length,
           itemBuilder: (context, index) {
@@ -27,12 +27,15 @@ class AnimeSlider extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  Image.asset(
-                    animes[index],
-                    fit: BoxFit.fitWidth,
+                  Image(
+                    image: NetworkImage(
+                      animes[index],
+                    ),
+                    height: 300,
+                    fit: BoxFit.contain,
                   ),
                   Positioned(
-                    bottom: 20,
+                    bottom: 0,
                     right: 0,
                     child: IconButton(
                       onPressed: () {},

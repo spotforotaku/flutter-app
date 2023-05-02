@@ -59,9 +59,38 @@ class _HomeScreenState extends State<HomeScreen> {
             getSizedBox(
               height: 20,
             ),
-            AnimeSlider(
-              animes: animeSlider,
+            FutureBuilder(
+              future: AnimeApi.getTopAiring(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Error");
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Text("Loading");
+                } else {
+                  if (snapshot.hasData) {
+                    var data = snapshot.data!;
+
+                    List<String> animes = List<String>.from(
+                      data.map(
+                        (e) {
+                          return e.animeImg;
+                        },
+                      ),
+                    );
+
+                    return AnimeSlider(
+                      animes: animes,
+                    );
+                  } else {
+                    return Text("Not loaded!");
+                  }
+                }
+              },
             ),
+            // AnimeSlider(
+            //   animes: animeSlider,
+            // ),
             getSizedBox(
               height: 10,
             ),
