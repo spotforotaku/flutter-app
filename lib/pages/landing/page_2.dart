@@ -70,7 +70,9 @@ class _Page2State extends State<Page2> {
       buttonText: "Start Tutorial",
       labelButtonText: "Skip",
       labelButtonDesc: "Have already used our app before?",
-      handleButton: () {},
+      handleButton: () {
+        Navigator.of(context).pushNamed(AppRoutes.tutorialRoute);
+      },
       handleLabel: () {
         Navigator.of(context).pushNamed(AppRoutes.loginRoute);
       },

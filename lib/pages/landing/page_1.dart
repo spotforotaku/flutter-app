@@ -14,7 +14,9 @@ class Page1 extends StatelessWidget {
       buttonText: "Get Started",
       labelButtonText: "Sign In",
       labelButtonDesc: "Have an account already?",
-      handleButton: () {},
+      handleButton: () {
+        Navigator.of(context).pushNamed(AppRoutes.tutorialRoute);
+      },
       handleLabel: () {
         Navigator.of(context).pushNamed(AppRoutes.loginRoute);
       },
