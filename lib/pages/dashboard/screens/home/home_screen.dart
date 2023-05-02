@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants.dart';
+import 'package:otaku/pages/dashboard/screens/home/constants.dart';
+import 'package:otaku/pages/dashboard/screens/home/slider.dart';
 import 'package:otaku/providers/dashboard_provider.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/helper.dart';
@@ -40,6 +42,9 @@ class HomeScreen extends StatelessWidget {
             ),
             getSizedBox(
               height: 20,
+            ),
+            AnimeSlider(
+              animes: animeSlider,
             ),
           ],
         ),
