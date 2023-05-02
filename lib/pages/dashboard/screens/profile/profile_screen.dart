@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants.dart';
 import 'package:otaku/pages/dashboard/screens/profile/profile_top.dart';
+import 'package:otaku/routes.dart';
 import 'package:otaku/services/auth.dart';
 
 import 'constants.dart';

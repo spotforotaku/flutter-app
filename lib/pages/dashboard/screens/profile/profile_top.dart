@@ -9,7 +9,7 @@ class ProfileTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var currentUser = AuthService.user;
+    var currentUser = AuthService().user;
 
     if (currentUser == null) {
       return LandingPage();

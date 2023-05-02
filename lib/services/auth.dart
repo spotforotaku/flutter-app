@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
-  static final userStream = FirebaseAuth.instance.userChanges();
-  static final user = FirebaseAuth.instance.currentUser;
+  final userStream = FirebaseAuth.instance.authStateChanges();
+  final user = FirebaseAuth.instance.currentUser;
 
   static Future<void> loginAnon() async {
     try {

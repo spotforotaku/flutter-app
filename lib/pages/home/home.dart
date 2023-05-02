@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: AuthService.userStream,
+      stream: AuthService().userStream,
       builder: (context, snapshot) {
         print(snapshot.connectionState);
         if (snapshot.hasError) {
@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
           return const Loading();
         } else {
           if (snapshot.hasData) {
+            print(snapshot.data);
             popAll(context);
             return const DashboardPage();
           } else {
