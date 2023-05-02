@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:otaku/constants.dart';
 import 'package:otaku/providers/dashboard_provider.dart';
 import 'package:otaku/services/auth.dart';
+import 'package:otaku/shared/helper.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -36,6 +37,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            getSizedBox(
+              height: 20,
             ),
           ],
         ),
