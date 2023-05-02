@@ -1,6 +1,34 @@
 const appName = "Otaku";
 const myList = "My lists";
 const fav = "Favourites";
+
+const pop1 = "52.9M",
+    pop2 = "90M",
+    pop3 = "20.6M",
+    pop4 = "10M",
+    pop5 = "16.7M",
+    pop6 = "20.9M";
+
+const kFav = [
+  pop1,
+  pop2,
+  pop3,
+  pop4,
+  pop5,
+  pop6,
+  pop1,
+  pop2,
+  pop3,
+  pop4,
+  pop5,
+  pop6,
+  pop1,
+  pop2,
+  pop3,
+  pop4,
+  pop5,
+  pop6
+];
 const comp = "Completed";
 const watch = "Watching";
 const watchL = "Watchlist";
@@ -59,7 +87,12 @@ const wfaqs = "FAQ's";
 const wterms = "Terms and Conditions";
 const wabout = "About us";
 const wsign = "Sign Out";
-
+const demonslayer = "Demon Slayer",
+    jujutsukaisen = "Jujutsu Kaisen",
+    spiritedaway = "Spirited Away",
+    myheroacademia = "My Hero Academia",
+    chainsawman = "ChainSaw Man",
+    tokyorevengers = "Tokyo Revengers";
 //settings
 const dark = "Dark Mode";
 const cache = "Clear Cache";

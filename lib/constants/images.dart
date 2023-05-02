@@ -62,7 +62,7 @@ const shounen = "assets/images/Shounen.png";
 const bgQuiz = "assets/images/Group.png";
 
 // lists
-const demon = "assets/images/demon.png";
+const demon = "assets/images/demon1.png";
 const juju = "assets/images/juju.png";
 const mj = "assets/images/mj.png";
 const naruto = "assets/images/naruto_list.png";

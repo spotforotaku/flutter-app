@@ -64,7 +64,26 @@ const genreList = [waction, wadventure, wromance, wmecha, wscience];
 const percent = [30.0, 65.0, 50.0, 20.0, 45.0];
 
 const animeicon = [cnaruto, cds, cchain, cgboy];
-const animename = [wnaruto, wds, wchain, wgboy];
+const animename = [
+  demonslayer,
+  jujutsukaisen,
+  spiritedaway,
+  myheroacademia,
+  chainsawman,
+  tokyorevengers,
+  demonslayer,
+  jujutsukaisen,
+  spiritedaway,
+  myheroacademia,
+  chainsawman,
+  tokyorevengers,
+  demonslayer,
+  jujutsukaisen,
+  spiritedaway,
+  myheroacademia,
+  chainsawman,
+  tokyorevengers
+];
 const animegenre1 = [waction, wadventure, wmecha, wromance];
 const animegenre2 = [wscience, wshounen, waction, wadventure];
 const colorgenre1 = [red, purple, grey, orange];

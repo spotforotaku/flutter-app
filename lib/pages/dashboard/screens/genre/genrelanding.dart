@@ -8,15 +8,16 @@ class GenrePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        CreateTopBar(
-          title: "Genre",
-        ),
-        tabBar(
-          context,
-        ),
-      ],
-    ));
+      body: Column(
+        children: [
+          CreateTopBar(
+            title: "Genre",
+          ),
+          tabBar(
+            context,
+          ),
+        ],
+      ),
+    );
   }
 }

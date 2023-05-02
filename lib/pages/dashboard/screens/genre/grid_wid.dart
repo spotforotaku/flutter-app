@@ -6,7 +6,12 @@ Widget buildgrid() {
     child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridView.builder(
-        padding: EdgeInsets.only(top: 5, left: 5, right: 5),
+        padding: EdgeInsets.only(
+          top: 5,
+          left: 5,
+          right: 5,
+          bottom: 5,
+        ),
         shrinkWrap: true,
         itemCount: 18,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -37,9 +42,12 @@ Widget buildgrid() {
                   Padding(
                     padding: const EdgeInsets.all(0),
                     child: Text(
-                      fav[index],
+                      kFav[index],
                       style: TextStyle(
-                          fontSize: 12, fontFamily: regular, color: red),
+                        fontSize: 12,
+                        fontFamily: regular,
+                        color: red,
+                      ),
                     ),
                   )
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants/constants.dart';
+import 'package:otaku/pages/dashboard/screens/genre/genrelanding.dart';
 import 'package:otaku/pages/dashboard/screens/home/anime_grid.dart';
 import 'package:otaku/pages/dashboard/screens/home/genres.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
@@ -97,17 +98,35 @@ class _HomeScreenState extends State<HomeScreen> {
             getSizedBox(
               height: 10,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 12.0, top: 10, bottom: 10),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  "Genres",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Genres",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
                   ),
-                ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => GenrePage(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Sea All",
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Genres(
