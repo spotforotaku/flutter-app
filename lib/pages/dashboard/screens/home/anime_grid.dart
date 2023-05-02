@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/models/popular_anime.dart';
 import 'package:otaku/models/recently_released.dart';
+import 'package:otaku/pages/dashboard/screens/anime_details.dart';
 
 class AnimeGrid<T> extends StatelessWidget {
   final String title;
@@ -28,20 +29,13 @@ class AnimeGrid<T> extends StatelessWidget {
           if (snapshot.hasData) {
             var data = snapshot.data!;
 
-            List<String> images = List<String>.from(
-              data.map(
-                (e) => e.animeImg,
-              ),
-            );
-
             return AnimeGridHelper(
               title: title,
-              images: images,
+              animes: data,
             );
           } else {
-            return AnimeGridHelper(
-              title: title,
-              images: defaultList,
+            return Text(
+              "Something went wrong. We're sorry about that 😥",
             );
           }
         }
@@ -54,11 +48,11 @@ class AnimeGridHelper extends StatelessWidget {
   const AnimeGridHelper({
     super.key,
     required this.title,
-    required this.images,
+    required this.animes,
   });
 
   final String title;
-  final List<String> images;
+  final List<dynamic> animes;
 
   @override
   Widget build(BuildContext context) {
@@ -94,29 +88,41 @@ class AnimeGridHelper extends StatelessWidget {
               children: [
                 ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: images.length,
+                  itemCount: animes.length,
                   separatorBuilder: (context, _) => SizedBox(width: 9),
                   itemBuilder: (context, index) {
-                    return Stack(
-                      children: [
-                        Image(
-                          image: NetworkImage(
-                            images[index],
-                          ),
-                          height: 300,
-                          fit: BoxFit.contain,
-                        ),
-                        Positioned(
-                          right: 0,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.add_box,
-                              color: Colors.red,
+                    return InkWell(
+                      onTap: () {
+                        print("Tapped index $index");
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => AnimeDetailsScreen(
+                              animeTitle: animes[index].animeTitle,
                             ),
                           ),
-                        )
-                      ],
+                        );
+                      },
+                      child: Stack(
+                        children: [
+                          Image(
+                            image: NetworkImage(
+                              animes[index].animeImg,
+                            ),
+                            height: 300,
+                            fit: BoxFit.contain,
+                          ),
+                          Positioned(
+                            right: 0,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add_box,
+                                color: Colors.red,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     );
                   },
                 ),

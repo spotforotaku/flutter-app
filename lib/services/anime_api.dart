@@ -5,6 +5,7 @@ import 'package:otaku/models/anime_details.dart';
 import 'package:otaku/models/popular_anime.dart';
 import 'package:otaku/models/recently_released.dart';
 import 'package:otaku/models/top_airing.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class AnimeApi {
   static const _backendUri = "gogoanime-api-production-3d9f.up.railway.app";
@@ -22,7 +23,13 @@ class AnimeApi {
       },
     );
     var resp = await _getRequest(uri);
-    return TopAiring.getListFromJson(resp.body);
+    var temp = TopAiring.getListFromJson(resp.body);
+
+    return List<TopAiring>.from(
+      temp.filter(
+        (element) => element.animeTitle.isNotEmpty,
+      ),
+    );
   }
 
   static Future<List<RecentlyReleased>> getRecentlyReleased(
@@ -35,7 +42,13 @@ class AnimeApi {
       },
     );
     var resp = await _getRequest(uri);
-    return RecentlyReleased.getListFromJson(resp.body);
+    var temp = RecentlyReleased.getListFromJson(resp.body);
+
+    return List<RecentlyReleased>.from(
+      temp.filter(
+        (element) => element.animeTitle.isNotEmpty,
+      ),
+    );
   }
 
   static Future<List<PopularAnime>> getPopular({int page = 1}) async {
@@ -47,7 +60,13 @@ class AnimeApi {
       },
     );
     var resp = await _getRequest(uri);
-    return PopularAnime.getListFromJson(resp.body);
+    var temp = PopularAnime.getListFromJson(resp.body);
+
+    return List<PopularAnime>.from(
+      temp.filter(
+        (element) => element.animeTitle.isNotEmpty,
+      ),
+    );
   }
 
   static Future<AnimeDetails> getAnimeDetails(String animeTitle) async {
