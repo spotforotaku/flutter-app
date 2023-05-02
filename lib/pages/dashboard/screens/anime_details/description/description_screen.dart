@@ -27,7 +27,9 @@ class DescriptionScreen extends StatelessWidget {
             DescTop(
               animeImg: animeDetails.animeImg,
             ),
-            tabdes(context),
+            TabDesc(
+              animeDetails: animeDetails,
+            ),
           ],
         ),
       ),
