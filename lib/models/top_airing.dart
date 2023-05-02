@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
 
 part "top_airing.g.dart";
@@ -24,4 +25,13 @@ class TopAiring {
       _$TopAiringFromJson(json);
 
   Map<String, dynamic> toJson() => _$TopAiringToJson(this);
+
+  static List<TopAiring> getListFromJson(String data) {
+    Iterable l = jsonDecode(data);
+    return List<TopAiring>.from(
+      l.map(
+        (e) => TopAiring.fromJson(e),
+      ),
+    );
+  }
 }

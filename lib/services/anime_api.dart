@@ -19,13 +19,6 @@ class AnimeApi {
       },
     );
     var resp = await _getRequest(uri);
-    print("response");
-    Iterable l = jsonDecode(resp.body);
-    List<TopAiring> topAiring = List<TopAiring>.from(
-      l.map(
-        (e) => TopAiring.fromJson(e),
-      ),
-    );
-    return topAiring;
+    return TopAiring.getListFromJson(resp.body);
   }
 }

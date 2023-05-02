@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:json_annotation/json_annotation.dart';
 
 part "recently_released.g.dart";
@@ -24,4 +25,13 @@ class RecentlyReleased {
       _$RecentlyReleasedFromJson(json);
 
   Map<String, dynamic> toJson() => _$RecentlyReleasedToJson(this);
+
+  static List<RecentlyReleased> getListFromJson(String data) {
+    Iterable l = jsonDecode(data);
+    return List<RecentlyReleased>.from(
+      l.map(
+        (e) => RecentlyReleased.fromJson(e),
+      ),
+    );
+  }
 }
