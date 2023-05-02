@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants/images.dart';
 
-class destop extends StatelessWidget {
+class DescTop extends StatelessWidget {
   final String animeImg;
-  const destop({
+  const DescTop({
     super.key,
     required this.animeImg,
   });
@@ -23,10 +23,6 @@ class destop extends StatelessWidget {
               ),
             ),
           ),
-          // child: Image.network(
-          //   animeImg,
-          //   fit: BoxFit.fill,
-          // ),
         ),
         Positioned(
           right: 50,

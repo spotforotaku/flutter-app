@@ -24,7 +24,7 @@ class DescriptionScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            destop(
+            DescTop(
               animeImg: animeDetails.animeImg,
             ),
             tabdes(context),
