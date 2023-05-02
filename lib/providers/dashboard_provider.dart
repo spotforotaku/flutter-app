@@ -47,7 +47,7 @@ class DashboardProvider with ChangeNotifier {
   ];
 
   final _showAppBar = [
-    true,
+    false,
     true,
     false,
     true,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const imgotaku = "assets/images/OTAKU.png";
 const primaryColor = Color(0xfff05d5e);
 const icsearch = "assets/icons/search.png";
 const icdustbin = "assets/icons/dustbin.png";
