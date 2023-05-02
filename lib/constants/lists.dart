@@ -136,3 +136,24 @@ const time = [
   'Mar 1,2023',
   'Mar 1,2023'
 ];
+
+const imagelist = [
+  demon,
+  jujutsu,
+  spirited,
+  myhero,
+  chainsaw,
+  tokyo,
+  demon,
+  jujutsu,
+  spirited,
+  myhero,
+  chainsaw,
+  tokyo,
+  demon,
+  jujutsu,
+  spirited,
+  myhero,
+  chainsaw,
+  tokyo
+];

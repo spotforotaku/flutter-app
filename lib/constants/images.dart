@@ -98,3 +98,12 @@ const badge2 = "assets/images/badge2.png";
 const badge3 = "assets/images/badge3.png";
 const badcomp = "assets/icons/Post Test Completed.png";
 const chatnav = "assets/images/chatnav.png";
+const spirited = "assets/images/spirited.png";
+const chainsaw = "assets/images/chainsaw.png";
+const jujutsu = "assets/images/jujutsu.png";
+const myhero = "assets/images/myhero.png";
+const tokyo = "assets/images/tokyo.png";
+
+const icheart = "assets/icons/heart.png";
+const icfilter = "assets/icons/filter.png";
+const iccross = "assets/icons/cross.png";

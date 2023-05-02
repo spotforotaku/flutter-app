@@ -88,3 +88,12 @@ const wnaruto = "Naruto";
 const wds = "Demon Slayer";
 const wchain = "Chainsaw";
 const wgboy = "The Golden Boy";
+
+const genre1 = "Fantasy",
+    genre2 = "Comedy",
+    genre3 = "Romance",
+    genre4 = "Action",
+    genre5 = "Shounen",
+    genre6 = "Adventure",
+    genre7 = "Shoujo",
+    genre8 = "Josie";
