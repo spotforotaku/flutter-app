@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/pages/login/login.dart';
-import 'package:otaku/pages/tutorial/tutorial_1.dart';
+import 'package:otaku/pages/tutorial/tutorial_template.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'constants.dart';
 
 class TutorialPage extends StatefulWidget {
   const TutorialPage({super.key});
@@ -34,9 +36,26 @@ class _TutorialPageState extends State<TutorialPage> {
             },
             controller: _controller,
             children: const [
-              Tutorial1(),
-              Tutorial1(),
-              Tutorial1(),
+              TutorialTemplate(
+                imageTut: listTut,
+                heading: "Organize your anime",
+                text1:
+                    "Know which episode your on. Create your favorite anime list.",
+                text2: "Keep track of your anime",
+              ),
+              TutorialTemplate(
+                imageTut: browseTut,
+                heading: "Discover new anime",
+                text1: "See all different genres and choose your anime.",
+                text2: "Anime are waiting for you",
+              ),
+              TutorialTemplate(
+                imageTut: chatTut,
+                heading: "Discuss anime",
+                text1:
+                    "Talk about the latest episode. Join clubs with shared interests.",
+                text2: "Chat with other Anime Freaks",
+              ),
             ],
           ),
           //  dot indicator

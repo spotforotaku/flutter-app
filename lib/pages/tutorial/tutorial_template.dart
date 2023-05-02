@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'constants.dart';
 
-class Tutorial1 extends StatelessWidget {
-  const Tutorial1({super.key});
+class TutorialTemplate extends StatelessWidget {
+  final String imageTut;
+  final String heading;
+  final String text1;
+  final String text2;
+
+  const TutorialTemplate(
+      {super.key,
+      required this.imageTut,
+      required this.heading,
+      required this.text1,
+      required this.text2});
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +38,12 @@ class Tutorial1 extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 50),
                   height: MediaQuery.of(context).size.height * .45,
                   alignment: Alignment.topCenter,
-                  child: Image.asset(listTut),
+                  child: Image.asset(imageTut),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(20.0),
                   child: Text(
-                    "Organize your anime",
+                    heading,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -45,9 +55,9 @@ class Tutorial1 extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.height * .70,
-                    child: const Text(
+                    child: Text(
                       textAlign: TextAlign.center,
-                      "Know which episode your on. Create your favorite anime list.",
+                      text1,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
@@ -59,9 +69,9 @@ class Tutorial1 extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.height * .70,
-                    child: const Text(
+                    child: Text(
                       textAlign: TextAlign.center,
-                      "Keep track of your anime",
+                      text2,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
