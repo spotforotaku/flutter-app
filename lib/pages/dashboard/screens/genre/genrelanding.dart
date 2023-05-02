@@ -8,6 +8,14 @@ class GenrePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Colors.pink,
+        ),
+      ),
+      extendBodyBehindAppBar: false,
       body: Column(
         children: [
           CreateTopBar(
