@@ -13,20 +13,20 @@ class AnimeSlider extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return VxSwiper.builder(
-          // aspectRatio: 20/9,
-          viewportFraction: 1.0,
+          viewportFraction: 0.8,
           autoPlay: true,
-          height: context.screenHeight - 550,
+          height: 300,
           enlargeCenterPage: true,
           itemCount: animes.length,
           itemBuilder: (context, index) {
             return Container(
-              // margin: EdgeInsets.symmetric(horizontal: 3),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(21)),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  21,
+                ),
+              ),
               child: Stack(
                 children: [
-                  // Text(),
                   Image.asset(
                     animes[index],
                     fit: BoxFit.fitWidth,
