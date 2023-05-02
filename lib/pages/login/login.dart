@@ -40,13 +40,13 @@ class LoginPage extends StatelessWidget {
           LoginButton(
             buttonText: "Continue with Google",
             iconData: FontAwesomeIcons.google,
-            onClick: AuthService.loginGoogle,
+            onClick: AuthService().loginGoogle,
             bgColor: Colors.pink,
           ),
           LoginButton(
             buttonText: "Continue as a guest",
             iconData: FontAwesomeIcons.user,
-            onClick: AuthService.loginAnon,
+            onClick: AuthService().loginAnon,
             bgColor: Colors.deepPurple,
           ),
         ],

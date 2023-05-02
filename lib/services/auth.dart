@@ -5,7 +5,7 @@ class AuthService {
   final userStream = FirebaseAuth.instance.authStateChanges();
   final user = FirebaseAuth.instance.currentUser;
 
-  static Future<void> loginAnon() async {
+  Future<void> loginAnon() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
       print("login success!");
@@ -14,7 +14,7 @@ class AuthService {
     }
   }
 
-  static Future<void> loginGoogle() async {
+  Future<void> loginGoogle() async {
     try {
       final googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) return;
@@ -29,7 +29,7 @@ class AuthService {
     }
   }
 
-  static Future<void> signOut() async {
+  Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
 }

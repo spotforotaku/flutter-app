@@ -105,7 +105,7 @@ class SignOut extends StatelessWidget {
           elevation: 2,
         ),
         onPressed: () async {
-          await AuthService.signOut();
+          await AuthService().signOut();
         },
         child: Text(
           wsign,
