@@ -46,9 +46,18 @@ class DashboardProvider with ChangeNotifier {
     ProfileScreen(),
   ];
 
+  final _showAppBar = [
+    true,
+    true,
+    false,
+    true,
+    false,
+  ];
+
   get pageLength => _pages.length;
   get currentPage => _pages[_pageIndex];
   get navItems => _navItems;
+  bool get showAppBar => _showAppBar[_pageIndex];
   int get pageIndex => _pageIndex;
   set pageIndex(int idx) {
     _pageIndex = idx;

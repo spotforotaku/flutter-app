@@ -15,7 +15,7 @@ class DashboardPage extends StatelessWidget {
         var dashboardProvider = context.watch<DashboardProvider>();
 
         return Scaffold(
-          appBar: AppBar(),
+          appBar: dashboardProvider.showAppBar ? AppBar() : null,
           body: dashboardProvider.currentPage,
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: dashboardProvider.pageIndex,
