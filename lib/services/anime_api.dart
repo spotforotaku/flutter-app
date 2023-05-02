@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:otaku/models/anime_details.dart';
 import 'package:otaku/models/popular_anime.dart';
 import 'package:otaku/models/recently_released.dart';
 import 'package:otaku/models/top_airing.dart';
@@ -47,5 +48,18 @@ class AnimeApi {
     );
     var resp = await _getRequest(uri);
     return PopularAnime.getListFromJson(resp.body);
+  }
+
+  static Future<AnimeDetails> getAnimeDetails(String animeTitle) async {
+    var uri = Uri.https(
+      _backendUri,
+      "popular/$animeTitle",
+    );
+    var resp = await _getRequest(uri);
+    AnimeDetails animeDetails = AnimeDetails.fromJson(
+      jsonDecode(resp.body),
+    );
+    print(animeDetails);
+    return animeDetails;
   }
 }
