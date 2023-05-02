@@ -25,12 +25,12 @@ class PopularAnime {
 
   Map<String, dynamic> toJson() => _$PopularAnimeToJson(this);
 
-  // static List<PopularAnime> getListFromJson(String data) {
-  //   Iterable l = jsonDecode(data);
-  //   return List<PopularAnime>.from(
-  //     l.map(
-  //       (e) => PopularAnime.fromJson(e),
-  //     ),
-  //   );
-  // }
+  static List<PopularAnime> getListFromJson(String data) {
+    Iterable l = jsonDecode(data);
+    return List<PopularAnime>.from(
+      l.map(
+        (e) => PopularAnime.fromJson(e),
+      ),
+    );
+  }
 }
