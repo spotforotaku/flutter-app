@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants.dart';
+import 'package:otaku/pages/dashboard/screens/home/anime_grid.dart';
 import 'package:otaku/pages/dashboard/screens/home/constants.dart';
+import 'package:otaku/pages/dashboard/screens/home/genres.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
 import 'package:otaku/providers/dashboard_provider.dart';
 import 'package:otaku/services/auth.dart';
@@ -47,6 +49,48 @@ class HomeScreen extends StatelessWidget {
             ),
             AnimeSlider(
               animes: animeSlider,
+            ),
+            getSizedBox(
+              height: 10,
+            ),
+            AnimeGrid(
+              title: "Newly Aired Animes",
+              images: animeList,
+            ),
+            getSizedBox(
+              height: 10,
+            ),
+            AnimeGrid(
+              title: "Now Trending",
+              images: trendingList,
+            ),
+            getSizedBox(
+              height: 10,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 12.0, top: 10, bottom: 10),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Genres",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+            Genres(
+              genres: genresList1,
+              names: genresName1,
+            ),
+            Genres(
+              genres: genresList2,
+              names: genresName2,
+            ),
+            Genres(
+              genres: genresList3,
+              names: genresName3,
             ),
           ],
         ),
