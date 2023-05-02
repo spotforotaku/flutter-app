@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/pages/landing/page_1.dart';
 import 'package:otaku/pages/landing/page_2.dart';
+import 'package:otaku/routes.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 export 'page.dart';
@@ -16,6 +17,15 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   final PageController _controller = PageController();
+
+  void handleLabel() {
+    Navigator.of(context).pushNamed(AppRoutes.loginRoute);
+  }
+
+  void handleButton() {
+    Navigator.of(context).pushNamed(AppRoutes.tutorialRoute);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,9 +33,15 @@ class _LandingPageState extends State<LandingPage> {
         children: [
           PageView(
             controller: _controller,
-            children: const [
-              Page1(),
-              Page2(),
+            children: [
+              Page1(
+                handleButton: handleButton,
+                handleLabel: handleLabel,
+              ),
+              Page2(
+                handleButton: handleButton,
+                handleLabel: handleLabel,
+              ),
             ],
           ),
           Container(

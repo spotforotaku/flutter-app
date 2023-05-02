@@ -4,7 +4,14 @@ import 'package:otaku/pages/landing/page.dart' as landing_page;
 import 'package:otaku/routes.dart';
 
 class Page1 extends StatelessWidget {
-  const Page1({Key? key}) : super(key: key);
+  final Function handleButton;
+  final Function handleLabel;
+
+  const Page1({
+    Key? key,
+    required this.handleButton,
+    required this.handleLabel,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +21,8 @@ class Page1 extends StatelessWidget {
       buttonText: "Get Started",
       labelButtonText: "Sign In",
       labelButtonDesc: "Have an account already?",
-      handleButton: () {
-        Navigator.of(context).pushNamed(AppRoutes.tutorialRoute);
-      },
-      handleLabel: () {
-        Navigator.of(context).pushNamed(AppRoutes.loginRoute);
-      },
+      handleButton: handleButton,
+      handleLabel: handleLabel,
     );
   }
 }

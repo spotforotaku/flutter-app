@@ -4,7 +4,11 @@ import 'package:otaku/pages/landing/page.dart' as landing_page;
 import 'package:otaku/routes.dart';
 
 class Page2 extends StatefulWidget {
-  const Page2({super.key});
+  final Function handleButton;
+  final Function handleLabel;
+
+  const Page2(
+      {super.key, required this.handleButton, required this.handleLabel});
 
   @override
   State<Page2> createState() => _Page2State();
@@ -70,12 +74,8 @@ class _Page2State extends State<Page2> {
       buttonText: "Start Tutorial",
       labelButtonText: "Skip",
       labelButtonDesc: "Have already used our app before?",
-      handleButton: () {
-        Navigator.of(context).pushNamed(AppRoutes.tutorialRoute);
-      },
-      handleLabel: () {
-        Navigator.of(context).pushNamed(AppRoutes.loginRoute);
-      },
+      handleButton: widget.handleButton,
+      handleLabel: widget.handleLabel,
     );
   }
 }
