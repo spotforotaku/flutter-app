@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/services/anime_api.dart';
+import 'package:otaku/shared/loading.dart';
 
 class AnimeDetailsScreen extends StatelessWidget {
   final String animeTitle;
@@ -29,14 +30,7 @@ class AnimeDetailsScreen extends StatelessWidget {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Scaffold(
-            appBar: AppBar(),
-            body: Center(
-              child: Text(
-                "Loading... ⏳",
-              ),
-            ),
-          );
+          return Loading();
         }
 
         return Scaffold(
