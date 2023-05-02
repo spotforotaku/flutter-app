@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/models/top_airing.dart';
+import 'package:otaku/pages/dashboard/screens/anime_details.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class AnimeSlider extends StatelessWidget {
@@ -23,6 +24,13 @@ class AnimeSlider extends StatelessWidget {
             return InkWell(
               onTap: () {
                 print("tappen on index $index");
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => AnimeDetailsScreen(
+                      animeTitle: animes[index].animeTitle,
+                    ),
+                  ),
+                );
               },
               child: Container(
                 decoration: BoxDecoration(
