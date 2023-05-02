@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/pages/landing/landing.dart';
+import 'package:otaku/services/auth.dart';
 
 import 'constants.dart';
 
@@ -7,6 +9,14 @@ class ProfileTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var currentUser = AuthService.user;
+
+    if (currentUser == null) {
+      return LandingPage();
+    }
+
+    print(currentUser);
+
     return SizedBox(
       height: 340,
       child: Stack(
@@ -15,13 +25,15 @@ class ProfileTop extends StatelessWidget {
           Container(
             height: 155,
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30)),
-                image: DecorationImage(
-                  image: AssetImage(profilebg),
-                  fit: BoxFit.cover,
-                )),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
+              image: DecorationImage(
+                image: AssetImage(profilebg),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Positioned(
             top: 80,
@@ -30,8 +42,9 @@ class ProfileTop extends StatelessWidget {
               width: 250,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(35),
-                    topRight: Radius.circular(35)),
+                  topLeft: Radius.circular(35),
+                  topRight: Radius.circular(35),
+                ),
                 color: Color(0xffF6EDED),
               ),
               child: Column(
@@ -41,29 +54,34 @@ class ProfileTop extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 52,
-                        child: Image.asset(propic),
+                        backgroundImage: NetworkImage(
+                          currentUser.photoURL ??
+                              "https://www.gravatar.com/avatar/placeholder",
+                        ),
                       ),
                       Positioned(
                         left: 70,
                         top: 70,
                         child: CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 16,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.mode_edit_outlined,
-                                  color: Colors.black,
-                                  size: 17,
-                                ))),
-                      )
+                          backgroundColor: Colors.white,
+                          radius: 16,
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.mode_edit_outlined,
+                              color: Colors.black,
+                              size: 17,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: 7,
                   ),
                   Text(
-                    "Name",
+                    currentUser.displayName ?? "Guest",
                     style: TextStyle(
                       fontSize: 19,
                       fontWeight: FontWeight.bold,
@@ -71,7 +89,7 @@ class ProfileTop extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "'Anime Freak'",
+                    currentUser.email ?? "'Anime Freak'",
                     style: TextStyle(
                       fontSize: 14,
                     ),
