@@ -5,12 +5,14 @@ class AnimeGrid<T> extends StatelessWidget {
   final String title;
   final Future<List<T>> futureValue;
   final List<String> defaultList;
+  final Function onSeeAll;
 
   const AnimeGrid({
     super.key,
     required this.title,
     required this.futureValue,
     required this.defaultList,
+    required this.onSeeAll,
   });
 
   @override
@@ -30,6 +32,7 @@ class AnimeGrid<T> extends StatelessWidget {
             return AnimeGridHelper(
               title: title,
               animes: data,
+              onSeeAll: onSeeAll,
             );
           } else {
             return Text(
@@ -47,10 +50,12 @@ class AnimeGridHelper extends StatelessWidget {
     super.key,
     required this.title,
     required this.animes,
+    required this.onSeeAll,
   });
 
   final String title;
   final List<dynamic> animes;
+  final Function onSeeAll;
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +73,14 @@ class AnimeGridHelper extends StatelessWidget {
                   fontSize: 17,
                 ),
               ),
-              const Text(
-                "Sea All",
-                style: TextStyle(
-                  color: Colors.redAccent,
-                  fontSize: 14,
+              InkWell(
+                onTap: () => onSeeAll(),
+                child: const Text(
+                  "Sea All",
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                    fontSize: 14,
+                  ),
                 ),
               ),
             ],

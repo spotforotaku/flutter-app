@@ -3,6 +3,7 @@ import 'package:otaku/constants/constants.dart';
 import 'package:otaku/pages/dashboard/screens/genre/genrelanding.dart';
 import 'package:otaku/pages/dashboard/screens/home/anime_grid.dart';
 import 'package:otaku/pages/dashboard/screens/home/genres.dart';
+import 'package:otaku/pages/dashboard/screens/home/now_trending.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
 import 'package:otaku/services/anime_api.dart';
 import 'package:otaku/services/auth.dart';
@@ -83,17 +84,25 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             AnimeGrid(
-              futureValue: AnimeApi.getRecentlyReleased(),
-              title: "Recently Released Episodes",
-              defaultList: animeList,
+              futureValue: AnimeApi.getPopular(),
+              title: "Now Trending",
+              defaultList: trendingList,
+              onSeeAll: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => NowTrendingScreen(),
+                  ),
+                );
+              },
             ),
             getSizedBox(
               height: 10,
             ),
             AnimeGrid(
-              futureValue: AnimeApi.getPopular(),
-              title: "Now Trending",
-              defaultList: trendingList,
+              futureValue: AnimeApi.getRecentlyReleased(),
+              title: "Recently Released Episodes",
+              defaultList: animeList,
+              onSeeAll: () {},
             ),
             getSizedBox(
               height: 10,
