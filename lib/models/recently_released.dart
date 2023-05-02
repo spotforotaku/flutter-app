@@ -7,6 +7,7 @@ part "recently_released.g.dart";
 class RecentlyReleased {
   final String episodeId;
   final String animeTitle;
+  final String animeId;
   final String episodeNum;
   final String subOrDub;
   final String animeImg;
@@ -15,6 +16,7 @@ class RecentlyReleased {
   RecentlyReleased({
     required this.episodeId,
     required this.animeTitle,
+    required this.animeId,
     required this.episodeNum,
     required this.subOrDub,
     required this.animeImg,
