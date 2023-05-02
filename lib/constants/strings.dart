@@ -24,11 +24,11 @@ const aired = "Newly Aired Anime";
 const trend = "Now Trending";
 const top = "Top 10 Anime";
 const find = "Find your Anime";
-const genres_name = "Genres";
-const list_name = "My List";
+const genresName = "Genres";
+const listName = "My List";
 
 //quiz
-const quiz_text = "Answer these question to find your new favorite";
+const quizText = "Answer these question to find your new favorite";
 const start = "Start Quiz";
 
 //genres
@@ -42,7 +42,7 @@ const wshounen = 'Shounen';
 
 //List text
 const listText = 'Browse all your saved Anime and Manga in one place.';
-const Abrowse = 'Browse >';
+const aBrowse = 'Browse >';
 
 //settings
 

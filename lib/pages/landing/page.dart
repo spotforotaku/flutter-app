@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/constants.dart';
 import 'package:otaku/constants/constants.dart';
 
 class Page extends StatelessWidget {

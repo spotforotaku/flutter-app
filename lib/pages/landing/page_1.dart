@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:otaku/pages/landing/page.dart' as landing_page;
-import 'package:otaku/routes.dart';
 
 class Page1 extends StatelessWidget {
   final Function handleButton;

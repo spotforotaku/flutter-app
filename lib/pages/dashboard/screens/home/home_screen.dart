@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:otaku/constants.dart';
 import 'package:otaku/constants/constants.dart';
 import 'package:otaku/pages/dashboard/screens/home/anime_grid.dart';
 import 'package:otaku/pages/dashboard/screens/home/genres.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
-import 'package:otaku/providers/dashboard_provider.dart';
 import 'package:otaku/services/anime_api.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/helper.dart';
-import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

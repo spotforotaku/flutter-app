@@ -1,5 +1,4 @@
 // icons
-import 'package:flutter/cupertino.dart';
 
 const icsearch = "assets/icons/search.png";
 const icdustbin = "assets/icons/dustbin.png";

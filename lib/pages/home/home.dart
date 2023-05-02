@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/pages/dashboard/dashboard.dart';
 import 'package:otaku/pages/landing/landing.dart';
-import 'package:otaku/routes.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/error.dart';
 import 'package:otaku/shared/loading.dart';

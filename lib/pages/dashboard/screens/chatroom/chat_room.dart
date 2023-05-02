@@ -5,7 +5,7 @@ class GroupChatRoom extends StatefulWidget {
   const GroupChatRoom({Key? key}) : super(key: key);
 
   @override
-  _GroupChatRoomState createState() => _GroupChatRoomState();
+  State<GroupChatRoom> createState() => _GroupChatRoomState();
 
   void onSubmitted(String text) {}
 }
@@ -23,9 +23,9 @@ class _GroupChatRoomState extends State<GroupChatRoom> {
           Container(
             alignment: Alignment.center,
             padding: EdgeInsets.only(top: 10.0),
-            child: Image.asset(chatnav),
             width: 400,
             height: 70.0,
+            child: Image.asset(chatnav),
           ),
           Container(
             width: 360,
@@ -60,7 +60,7 @@ class _GroupChatRoomState extends State<GroupChatRoom> {
                 icon: Icon(Icons.emoji_emotions),
                 color: Colors.redAccent,
                 onPressed: () {
-                  // TODO: Open emoji picker
+                  // // TODO: Open emoji picker
                 },
               ),
               Expanded(
@@ -80,7 +80,7 @@ class _GroupChatRoomState extends State<GroupChatRoom> {
                 icon: Icon(Icons.attach_file),
                 color: Colors.redAccent,
                 onPressed: () {
-                  // TODO: Open @ picker
+                  // // TODO: Open @ picker
                 },
               ),
               IconButton(

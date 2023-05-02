@@ -16,7 +16,7 @@ class ProfileScreen extends StatelessWidget {
             children: const [
               Button(option: wsettings, optionIcon: icset),
               Button(option: wstats, optionIcon: icstats),
-              Button(option: list_name, optionIcon: iclist),
+              Button(option: listName, optionIcon: iclist),
               Button(option: wfeed, optionIcon: icfeed),
               Button(option: win, optionIcon: icinvite),
               Button(option: whelp, optionIcon: ichelp),

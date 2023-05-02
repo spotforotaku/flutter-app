@@ -4,7 +4,7 @@ Widget chatCard() {
   return Column(
     children: [
       Row(
-        children: [
+        children: const [
           Text('Popular',
               style: TextStyle(
                   fontSize: 15,
