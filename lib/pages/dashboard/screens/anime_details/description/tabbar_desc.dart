@@ -37,7 +37,9 @@ class TabDesc extends StatelessWidget {
                 DescBot(
                   animeDetails: animeDetails,
                 ),
-                EpisodeDesc(),
+                EpisodeDesc(
+                  animeDetails: animeDetails,
+                ),
               ],
             ),
           )
