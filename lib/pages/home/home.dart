@@ -9,6 +9,17 @@ import 'package:otaku/shared/loading.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  void popAll(BuildContext context) {
+    Future.delayed(
+      Duration.zero,
+      () {
+        while (Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -19,25 +30,11 @@ class HomePage extends StatelessWidget {
           return ErrorScreen();
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          Future.delayed(
-            Duration.zero,
-            () {
-              if (Navigator.of(context).canPop()) {
-                Navigator.of(context).pop();
-              }
-            },
-          );
+          popAll(context);
           return const Loading();
         } else {
           if (snapshot.hasData) {
-            Future.delayed(
-              Duration.zero,
-              () {
-                if (Navigator.of(context).canPop()) {
-                  Navigator.of(context).pop();
-                }
-              },
-            );
+            popAll(context);
             return const DashboardPage();
           } else {
             return const LandingPage();
