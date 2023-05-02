@@ -33,9 +33,16 @@ class AnimeDetailsScreen extends StatelessWidget {
 
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Loading();
+        } else {
+          if (snapshot.hasData) {
+            var data = snapshot.data!;
+            return DescriptionScreen(
+              animeDetails: data,
+            );
+          }
         }
 
-        return DescriptionScreen();
+        return Text("Something happened, idk what?");
       }),
     );
   }

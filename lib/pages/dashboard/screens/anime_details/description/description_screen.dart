@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/models/anime_details.dart';
 import 'des_top.dart';
 import 'tabbar_desc.dart';
 
 class DescriptionScreen extends StatelessWidget {
-  const DescriptionScreen({Key? key}) : super(key: key);
+  final AnimeDetails animeDetails;
+
+  const DescriptionScreen({
+    Key? key,
+    required this.animeDetails,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,9 @@ class DescriptionScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            destop(),
+            destop(
+              animeImg: animeDetails.animeImg,
+            ),
             tabdes(context),
           ],
         ),
