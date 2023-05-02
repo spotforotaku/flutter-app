@@ -6,3 +6,4 @@ export 'profile/profile.dart';
 export 'settings/settings.dart';
 export 'signup/signup.dart';
 export 'stats/stats.dart';
+export "tutorial/tutorial.dart";

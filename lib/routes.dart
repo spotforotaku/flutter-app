@@ -9,6 +9,7 @@ class AppRoutes {
   static const dashboardRoute = "/dashboard";
   static const settingsRoute = "/settings";
   static const statsRoute = "/stats";
+  static const tutorialRoute = "/tutorial";
 
   static var routes = {
     AppRoutes.homeRoute: (_) => HomePage(),
@@ -19,5 +20,6 @@ class AppRoutes {
     AppRoutes.dashboardRoute: (_) => DashboardPage(),
     AppRoutes.settingsRoute: (_) => SettingsPage(),
     AppRoutes.statsRoute: (_) => StatsPage(),
+    AppRoutes.tutorialRoute: (_) => TutorialPage(),
   };
 }
