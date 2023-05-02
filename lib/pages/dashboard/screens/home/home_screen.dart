@@ -8,9 +8,20 @@ import 'package:otaku/providers/dashboard_provider.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/helper.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
