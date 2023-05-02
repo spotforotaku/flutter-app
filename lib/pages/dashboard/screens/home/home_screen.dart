@@ -5,6 +5,7 @@ import 'package:otaku/pages/dashboard/screens/home/constants.dart';
 import 'package:otaku/pages/dashboard/screens/home/genres.dart';
 import 'package:otaku/pages/dashboard/screens/home/slider.dart';
 import 'package:otaku/providers/dashboard_provider.dart';
+import 'package:otaku/services/anime_api.dart';
 import 'package:otaku/services/auth.dart';
 import 'package:otaku/shared/helper.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    AnimeApi.getPopular();
   }
 
   @override
