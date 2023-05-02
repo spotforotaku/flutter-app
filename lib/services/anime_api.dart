@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:otaku/models/recently_released.dart';
 import 'package:otaku/models/top_airing.dart';
 
 class AnimeApi {
@@ -20,5 +21,18 @@ class AnimeApi {
     );
     var resp = await _getRequest(uri);
     return TopAiring.getListFromJson(resp.body);
+  }
+
+  static Future<List<RecentlyReleased>> getRecentlyReleased(
+      {int page = 1}) async {
+    var uri = Uri.https(
+      _backendUri,
+      "recent-release",
+      {
+        "page": "$page",
+      },
+    );
+    var resp = await _getRequest(uri);
+    return RecentlyReleased.getListFromJson(resp.body);
   }
 }
