@@ -69,15 +69,19 @@ class AnimeApi {
     );
   }
 
-  static Future<AnimeDetails> getAnimeDetails(String animeTitle) async {
+  static Future<AnimeDetails> getAnimeDetails(String animeId) async {
+    print("getting anime details for $animeId");
+    print("anime-details/$animeId");
     var uri = Uri.https(
       _backendUri,
-      "popular/$animeTitle",
+      "anime-details/$animeId",
     );
     var resp = await _getRequest(uri);
+    // print(jsonDecode(resp.body));
     AnimeDetails animeDetails = AnimeDetails.fromJson(
       jsonDecode(resp.body),
     );
+    print("anime deatils");
     print(animeDetails);
     return animeDetails;
   }

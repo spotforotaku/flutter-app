@@ -27,7 +27,7 @@ class AnimeSlider extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) => AnimeDetailsScreen(
-                      animeTitle: animes[index].animeTitle,
+                      animeTitle: animes[index].animeId,
                     ),
                   ),
                 );

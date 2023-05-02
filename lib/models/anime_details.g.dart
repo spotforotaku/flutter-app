@@ -9,14 +9,14 @@ part of 'anime_details.dart';
 AnimeDetails _$AnimeDetailsFromJson(Map<String, dynamic> json) => AnimeDetails(
       animeTitle: json['animeTitle'] as String,
       type: json['type'] as String,
-      releaseDate: json['releaseDate'] as String,
+      releasedDate: json['releasedDate'] as String,
       status: json['status'] as String,
       genres:
           (json['genres'] as List<dynamic>).map((e) => e as String).toList(),
       otherNames: json['otherNames'] as String,
-      sypnosis: json['sypnosis'] as String,
+      synopsis: json['synopsis'] as String,
       animeImg: json['animeImg'] as String,
-      episodesAvailable: json['episodesAvailable'] as String,
+      totalEpisodes: json['totalEpisodes'] as String,
       episodesList: (json['episodesList'] as List<dynamic>)
           .map((e) => Episode.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -26,12 +26,12 @@ Map<String, dynamic> _$AnimeDetailsToJson(AnimeDetails instance) =>
     <String, dynamic>{
       'animeTitle': instance.animeTitle,
       'type': instance.type,
-      'releaseDate': instance.releaseDate,
+      'releasedDate': instance.releasedDate,
       'status': instance.status,
       'genres': instance.genres,
       'otherNames': instance.otherNames,
-      'sypnosis': instance.sypnosis,
+      'synopsis': instance.synopsis,
       'animeImg': instance.animeImg,
-      'episodesAvailable': instance.episodesAvailable,
+      'totalEpisodes': instance.totalEpisodes,
       'episodesList': instance.episodesList.map((e) => e.toJson()).toList(),
     };

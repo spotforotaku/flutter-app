@@ -10,25 +10,25 @@ part "anime_details.g.dart";
 class AnimeDetails {
   final String animeTitle;
   final String type;
-  final String releaseDate;
+  final String releasedDate;
   final String status;
   final List<String> genres;
   final String otherNames;
-  final String sypnosis;
+  final String synopsis;
   final String animeImg;
-  final String episodesAvailable;
+  final String totalEpisodes;
   final List<Episode> episodesList;
 
   AnimeDetails({
     required this.animeTitle,
     required this.type,
-    required this.releaseDate,
+    required this.releasedDate,
     required this.status,
     required this.genres,
     required this.otherNames,
-    required this.sypnosis,
+    required this.synopsis,
     required this.animeImg,
-    required this.episodesAvailable,
+    required this.totalEpisodes,
     required this.episodesList,
   });
 
