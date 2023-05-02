@@ -107,3 +107,10 @@ const tokyo = "assets/images/tokyo.png";
 const icheart = "assets/icons/heart.png";
 const icfilter = "assets/icons/filter.png";
 const iccross = "assets/icons/cross.png";
+
+const ep1 = "assets/images/ep1.png";
+const ep2 = "assets/images/ep2.png";
+const ep3 = "assets/images/ep3.png";
+
+const tick = "assets/images/tick.png";
+const banner = "assets/images/Banner_naruto.png";

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:otaku/constants/constants.dart';
+import 'package:otaku/pages/dashboard/screens/anime_details/description/description_screen.dart';
 import 'package:otaku/services/anime_api.dart';
 import 'package:otaku/shared/loading.dart';
 
@@ -33,21 +35,7 @@ class AnimeDetailsScreen extends StatelessWidget {
           return Loading();
         }
 
-        return Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.transparent,
-            iconTheme: IconThemeData(
-              color: Colors.pink,
-            ),
-          ),
-          extendBodyBehindAppBar: true,
-          body: Center(
-            child: Text(
-              animeTitle,
-            ),
-          ),
-        );
+        return DescriptionScreen();
       }),
     );
   }

@@ -176,3 +176,37 @@ const imagelist = [
   chainsaw,
   tokyo
 ];
+
+const epimg = [
+  ep1,
+  ep2,
+  ep3,
+  ep1,
+  ep2,
+  ep3,
+  ep1,
+  ep2,
+  ep3,
+];
+const epnum = [
+  "S01: E01",
+  "S01: E02",
+  "S01 :E03",
+  "S01: E01",
+  "S01: E02",
+  "S01 :E03",
+  "S01: E01",
+  "S01: E02",
+  "S01 :E03",
+];
+const epdesc = [
+  "Enter: Naruto Uzumaki",
+  "My Name is Konahamaru",
+  "Sasuke and Sakura:Friend or foe",
+  "Enter: Naruto Uzumaki",
+  "My Name is Konahamaru",
+  "Sasuke and Sakura:Friend or foe",
+  "Enter: Naruto Uzumaki",
+  "My Name is Konahamaru",
+  "Sasuke and Sakura:Friend or foe",
+];
