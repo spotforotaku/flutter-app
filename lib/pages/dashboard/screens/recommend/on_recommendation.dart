@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:otaku/models/recommendations.dart';
 import 'package:otaku/shared/loading.dart';
+import 'package:http/http.dart' as http;
 
 class OnRecommendation extends StatelessWidget {
   final String animeName;
+  final _backendUri = "192.168.31.208:4000";
 
   const OnRecommendation({
     super.key,
@@ -10,8 +15,30 @@ class OnRecommendation extends StatelessWidget {
   });
 
   Future<List<String>> getRecs() async {
-    await Future.delayed(Duration(seconds: 4));
-    return ["Naruto"];
+    Map<String, String> headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+    };
+
+    // print("Sending req for $animeName");
+    // var uri = Uri.http(_backendUri, "content");
+    // var resp = await http.post(
+    //   uri,
+    //   body: jsonEncode({
+    //     "anime": animeName,
+    //   }),
+    //   headers: headers,
+    // );
+
+    await Future.delayed(Duration(seconds: 5));
+
+    // if (resp.statusCode != 200) {
+    return ["One Piece", "My Hero Academia"];
+    // }
+
+    // Recommendations recs = Recommendations.fromJson(jsonDecode(resp.body));
+    // print(recs.rec1 + recs.rec2);
+    // return recs.rec1 + recs.rec2;
   }
 
   @override
@@ -20,6 +47,9 @@ class OnRecommendation extends StatelessWidget {
       future: getRecs(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
+          print("error");
+          print(snapshot.error);
+
           return Scaffold(
             appBar: AppBar(),
             body: Center(
@@ -50,7 +80,11 @@ class OnRecommendation extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(),
             body: Center(
-              child: Text("Recs"),
+              child: ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return Text(data[index]);
+                  }),
             ),
           );
         }
