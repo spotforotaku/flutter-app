@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
         final theme = Provider.of<ThemeProvider>(context);
 
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: "Otaku",
           home: FutureBuilder(
             future: _initalization,
@@ -44,6 +45,7 @@ class _MyAppState extends State<MyApp> {
 
               if (snapshot.connectionState == ConnectionState.done) {
                 return MaterialApp(
+                  debugShowCheckedModeBanner: false,
                   theme: theme.themeData,
                   routes: AppRoutes.routes,
                   initialRoute: AppRoutes.homeRoute,

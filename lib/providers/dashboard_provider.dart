@@ -14,13 +14,13 @@ class DashboardProvider with ChangeNotifier {
       ),
       label: "Home",
     ),
-    const BottomNavigationBarItem(
-      icon: Icon(
-        Icons.list_alt,
-        size: 26,
-      ),
-      label: "My List",
-    ),
+    // const BottomNavigationBarItem(
+    //   icon: Icon(
+    //     Icons.list_alt,
+    //     size: 26,
+    //   ),
+    //   label: "My List",
+    // ),
     const BottomNavigationBarItem(
       icon: Icon(
         Icons.grid_view_rounded,
@@ -46,7 +46,7 @@ class DashboardProvider with ChangeNotifier {
 
   final _pages = [
     HomeScreen(),
-    ListScreen(),
+    // ListScreen(),
     RecommendScreen(),
     ChatScreen(),
     ProfileScreen(),
@@ -54,7 +54,7 @@ class DashboardProvider with ChangeNotifier {
 
   final _showAppBar = [
     false,
-    true,
+    // true,
     false,
     false,
     false,
