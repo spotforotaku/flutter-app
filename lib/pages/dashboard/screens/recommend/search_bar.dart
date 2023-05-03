@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:otaku/constants/constants.dart';
+import 'package:otaku/pages/dashboard/screens/recommend/on_recommendation.dart';
 
 Widget TopBarBrowse(context) {
   final controller = TextEditingController();
@@ -41,6 +42,13 @@ Widget TopBarBrowse(context) {
         IconButton(
           onPressed: () {
             print("find recommendations for ${controller.text}");
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => OnRecommendation(
+                  animeName: controller.text,
+                ),
+              ),
+            );
           },
           icon: Icon(Icons.search),
         ),
