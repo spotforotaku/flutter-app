@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 class OnRecommendation extends StatelessWidget {
   final String animeName;
-  final _backendUri = "192.168.31.208:4000";
+  final _backendUri = "192.168.14.107:4000";
 
   const OnRecommendation({
     super.key,
@@ -22,34 +22,38 @@ class OnRecommendation extends StatelessWidget {
       'Accept': 'application/json',
     };
 
-    // print("Sending req for $animeName");
-    // var uri = Uri.http(_backendUri, "content");
-    // var resp = await http.post(
-    //   uri,
-    //   body: jsonEncode({
-    //     "anime": animeName,
-    //   }),
-    //   headers: headers,
-    // );
-
-    await Future.delayed(Duration(seconds: 2));
-
-    // if (resp.statusCode != 200) {
-    return [
-      "One Piece",
-      "My Hero Academia",
-      "One Piece",
-      "My Hero Academia",
-      "One Piece",
-      "My Hero Academia",
-      "One Piece",
-      "My Hero Academia"
-    ];
-    // }
-
-    // Recommendations recs = Recommendations.fromJson(jsonDecode(resp.body));
-    // print(recs.rec1 + recs.rec2);
-    // return recs.rec1 + recs.rec2;
+    print("Sending req for $animeName");
+    try {
+      var uri = Uri.http(_backendUri, "content");
+      var resp = await http.post(
+        uri,
+        body: jsonEncode({
+          "anime": animeName,
+        }),
+        headers: headers,
+      );
+      if (resp.statusCode != 200) {
+        return [
+          "One Piece",
+          "My Hero Academia",
+          "Death Note",
+          "Bleach",
+          "demon slayer",
+        ];
+      }
+      Recommendations recs = Recommendations.fromJson(jsonDecode(resp.body));
+      print(recs.rec1 + recs.rec2);
+      return recs.rec1 + recs.rec2;
+    } catch (e) {
+      await Future.delayed(Duration(seconds: 2));
+      return [
+        "One Piece",
+        "My Hero Academia",
+        "Death Note",
+        "Bleach",
+        "demon slayer",
+      ];
+    }
   }
 
   @override
