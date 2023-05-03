@@ -33,7 +33,8 @@ class HomePage extends StatelessWidget {
           return const Loading();
         } else {
           if (snapshot.hasData) {
-            print(snapshot.data);
+            var data = snapshot.data!;
+            print("user uid: ${data.uid}");
             popAll(context);
             return const DashboardPage();
           } else {

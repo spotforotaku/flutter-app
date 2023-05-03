@@ -5,18 +5,18 @@ import 'package:otaku/services/anime_api.dart';
 import 'package:otaku/shared/loading.dart';
 
 class AnimeDetailsScreen extends StatelessWidget {
-  final String animeTitle;
+  final String animeId;
 
   const AnimeDetailsScreen({
     super.key,
-    required this.animeTitle,
+    required this.animeId,
   });
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: AnimeApi.getAnimeDetails(
-        animeTitle,
+        animeId,
       ),
       builder: ((context, snapshot) {
         if (snapshot.hasError) {
@@ -36,6 +36,7 @@ class AnimeDetailsScreen extends StatelessWidget {
         } else {
           if (snapshot.hasData) {
             var data = snapshot.data!;
+
             return DescriptionScreen(
               animeDetails: data,
             );

@@ -103,7 +103,7 @@ class AnimeGridHelper extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) => AnimeDetailsScreen(
-                              animeTitle: animes[index].animeId,
+                              animeId: animes[index].animeId,
                             ),
                           ),
                         );
