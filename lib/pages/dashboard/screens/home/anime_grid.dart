@@ -97,44 +97,57 @@ class AnimeGridHelper extends StatelessWidget {
                   itemCount: animes.length,
                   separatorBuilder: (context, _) => SizedBox(width: 9),
                   itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        print("Tapped index $index");
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => AnimeDetailsScreen(
-                              animeId: animes[index].animeId,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Stack(
-                        children: [
-                          Image(
-                            image: NetworkImage(
-                              animes[index].animeImg,
-                            ),
-                            height: 300,
-                            fit: BoxFit.contain,
-                          ),
-                          Positioned(
-                            right: 0,
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.add_box,
-                                color: Colors.red,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    );
+                    return AnimeCard(anime: animes[index]);
                   },
                 ),
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class AnimeCard extends StatelessWidget {
+  const AnimeCard({
+    super.key,
+    required this.anime,
+  });
+
+  final dynamic anime;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => AnimeDetailsScreen(
+              animeId: anime.animeId,
+            ),
+          ),
+        );
+      },
+      child: Stack(
+        children: [
+          Image(
+            image: NetworkImage(
+              anime.animeImg,
+            ),
+            height: 300,
+            fit: BoxFit.contain,
+          ),
+          // Positioned(
+          //   right: 0,
+          //   child: IconButton(
+          //     onPressed: () {},
+          //     icon: Icon(
+          //       Icons.add_box,
+          //       color: Colors.red,
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
